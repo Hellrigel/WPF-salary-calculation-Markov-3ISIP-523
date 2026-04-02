@@ -1,0 +1,68 @@
+﻿<Window x:Class="TKtestMarkov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Расчет заработной платы" Height="350" Width="400">
+
+    <!-- Основная сетка -->
+    <Grid Margin="10">
+
+        <!-- Ввод количества часов -->
+        <Label Content="Количество часов:" VerticalAlignment="Top"/>
+
+        <!-- Поле ввода часов -->
+        <TextBox x:Name="HoursTextBox"
+                 Margin="150,0,0,0"
+                 Width="100"
+                 VerticalAlignment="Top"/>
+
+        <!-- Группа выбора преподавателя -->
+        <GroupBox Header="Преподаватель"
+                  Margin="0,40,0,0"
+                  Height="100"
+                  VerticalAlignment="Top">
+
+            <!-- Контейнер для радио-кнопок -->
+            <StackPanel>
+
+                <!-- Ассистент -->
+                <RadioButton x:Name="AssistantRadio"
+                             Content="ассистент (150 руб/час)"/>
+
+                <!-- Доцент -->
+                <RadioButton x:Name="DocentRadio"
+                             Content="доцент (250 руб/час)"/>
+
+                <!-- Профессор -->
+                <RadioButton x:Name="ProfessorRadio"
+                             Content="профессор (350 руб/час)"/>
+
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Чекбокс налога -->
+        <CheckBox x:Name="TaxCheckBox"
+                  Content="Подоходный налог (13%)"
+                  Margin="0,150,0,0"
+                  VerticalAlignment="Top"/>
+
+        <!-- Кнопка вычисления -->
+        <Button Content="Вычислить"
+                Width="120"
+                Margin="0,190,0,0"
+                VerticalAlignment="Top"
+                Click="CalculateButton_Click"/>
+
+        <!-- Вывод начисленной суммы -->
+        <TextBlock x:Name="SalaryText"
+                   Margin="0,230,0,0"
+                   FontSize="14"
+                   VerticalAlignment="Top"/>
+
+        <!-- Вывод налога -->
+        <TextBlock x:Name="TaxText"
+                   Margin="0,260,0,0"
+                   FontSize="14"
+                   VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
